@@ -69,6 +69,7 @@ digit       [0-9]
   *     with the correct line number
   */
 
+ /* regex patterns for keywords. */
 (?i:"class") return CLASS;
 (?i:"else") return ELSE;
 (?i:"fi") return FI;
