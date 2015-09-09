@@ -69,4 +69,22 @@ digit       [0-9]
   *     with the correct line number
   */
 
+(?i:"class") return CLASS;
+(?i:"else") return ELSE;
+(?i:"fi") return FI;
+(?i:"if") return IF;
+(?i:"in") return IN;
+(?i:"inherits") return INHERITS;
+(?i:"let") return LET;
+(?i:"loop") return LOOP;
+(?i:"pool") return POOL;
+(?i:"then") return THEN;
+(?i:"while") return WHILE;
+(?i:"case") return CASE;
+(?i:"esac") return ESAC;
+(?i:"of") return OF;
+(?i:"new") return NEW;
+(?i:"isvoid") return ISVOID;
+(?i:"not") return NOT;
+
 %%
