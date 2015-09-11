@@ -70,7 +70,7 @@ digit       [0-9]
   */
 
  /* regex patterns for keywords. */
-(?i:"class") return CLASS;
+(?i:"class") {return CLASS;}
 (?i:"else") return ELSE;
 (?i:"fi") return FI;
 (?i:"if") return IF;
@@ -87,5 +87,10 @@ digit       [0-9]
 (?i:"new") return NEW;
 (?i:"isvoid") return ISVOID;
 (?i:"not") return NOT;
+
+[0-9]+ { 
+  cool_yylval.symbol = inttable.add_string(yytext); 
+  return INT_CONST;
+}
 
 %%
