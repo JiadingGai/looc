@@ -98,4 +98,9 @@ digit       [0-9]
   return TYPEID;
 }
 
+[a-z][a-zA-Z0-9]* {
+  cool_yylval.symbol = idtable.add_string(yytext);
+  return OBJECTID;
+}
+
 %%
