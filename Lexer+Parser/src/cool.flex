@@ -93,4 +93,9 @@ digit       [0-9]
   return INT_CONST;
 }
 
+[A-Z][a-zA-Z0-9]* {
+  cool_yylval.symbol = idtable.add_string(yytext);
+  return TYPEID;
+}
+
 %%
