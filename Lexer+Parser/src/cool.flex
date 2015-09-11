@@ -88,6 +88,16 @@ digit       [0-9]
 (?i:"isvoid") return ISVOID;
 (?i:"not") return NOT;
 
+t(?i:"rue") {
+  cool_yylval.boolean = true;
+  return BOOL_CONST;
+}
+
+f(?i:"alse") {
+  cool_yylval.boolean = false;
+  return BOOL_CONST;
+}
+
 [0-9]+ { 
   cool_yylval.symbol = inttable.add_string(yytext); 
   return INT_CONST;
