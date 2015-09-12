@@ -103,12 +103,12 @@ f(?i:"alse") {
   return INT_CONST;
 }
 
-[A-Z][a-zA-Z0-9]* {
+[A-Z][a-zA-Z0-9_]* {
   cool_yylval.symbol = idtable.add_string(yytext);
   return TYPEID;
 }
 
-[a-z][a-zA-Z0-9]* {
+[a-z][a-zA-Z0-9_]* {
   cool_yylval.symbol = idtable.add_string(yytext);
   return OBJECTID;
 }
