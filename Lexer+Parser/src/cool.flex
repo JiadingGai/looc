@@ -117,7 +117,7 @@ f(?i:"alse") {
  /* pattern-actions for one-line comments */
 -- BEGIN(oneline_comment);
 <oneline_comment>[^\n]
-<oneline_comment>\n BEGIN(INITIAL);
+<oneline_comment>\n { curr_lineno++; BEGIN(INITIAL);}
 <oneline_comment><<EOF>> BEGIN(INITIAL);
 
 %%
