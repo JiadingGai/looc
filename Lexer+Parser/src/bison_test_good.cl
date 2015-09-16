@@ -2,6 +2,10 @@
 class A {
 };
 
+(* 
+  block comments in between brackets.
+*)
+
 Class BB__ inherits A {
 };
 -- This is the end

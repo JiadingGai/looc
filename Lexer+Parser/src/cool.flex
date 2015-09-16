@@ -53,6 +53,7 @@ extern YYSTYPE cool_yylval;
 digit       [0-9]
 
 %x oneline_comment
+%x block_comment
 %%
 
  /*
@@ -116,8 +117,15 @@ f(?i:"alse") {
 
  /* pattern-actions for one-line comments */
 -- BEGIN(oneline_comment);
-<oneline_comment>[^\n]
+<oneline_comment>[^\n] /* eat anything that's not a new line */
 <oneline_comment>\n { curr_lineno++; BEGIN(INITIAL);}
 <oneline_comment><<EOF>> BEGIN(INITIAL);
+
+ /* pattern-actions for block comments */
+"(*" BEGIN(block_comment);
+<block_comment>[^*\n]* /* eat anything but * or new line */
+<block_comment>"*"+[^)\n]* /* eat any * that's not followed by ) */
+<block_comment>\n { curr_lineno++; }
+<block_comment>"*)" {BEGIN(INITIAL);}
 
 %%
