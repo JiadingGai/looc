@@ -128,4 +128,14 @@ f(?i:"alse") {
 <block_comment>\n { curr_lineno++; }
 <block_comment>"*)" {BEGIN(INITIAL);}
 
+"{"|"}"|";" { 
+  return yytext[0];
+}
+
+
+\n {
+  curr_lineno++;
+}
+
+[ \f\r\t\v] /* eat all those */
 %%
