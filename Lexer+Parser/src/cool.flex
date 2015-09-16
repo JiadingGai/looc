@@ -52,6 +52,7 @@ extern YYSTYPE cool_yylval;
 
 digit       [0-9]
 
+%x oneline_comment
 %%
 
  /*
@@ -112,5 +113,11 @@ f(?i:"alse") {
   cool_yylval.symbol = idtable.add_string(yytext);
   return OBJECTID;
 }
+
+ /* pattern-actions for one-line comments */
+-- BEGIN(oneline_comment);
+<oneline_comment>[^\n]
+<oneline_comment>\n BEGIN(INITIAL);
+<oneline_comment><<EOF>> BEGIN(INITIAL);
 
 %%
