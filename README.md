@@ -6,5 +6,6 @@ Part I: Lexer+Parser
   Sol 1: using flex & bison.
   Sol 2: handwrite the lexer and the parser (recurisve descent parsing).
 
-Part II:
+Part II: CodeGen (part one and part two).
+
 
