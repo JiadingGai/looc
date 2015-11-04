@@ -38,4 +38,6 @@ new-complex.cl  a complex arithmetic and equality regression test
 
 hs.cl           "hairy-scary" is a torture regression test
 
+times_o.cl      Jiading's previous one.
+
 That's it! 
