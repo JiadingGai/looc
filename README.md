@@ -8,4 +8,6 @@ Part I: Lexer+Parser
 
 Part II: CodeGen (part one and part two).
 
+Reference:
 
+[1] https://theory.stanford.edu/~aiken/software/cool/cool.html
